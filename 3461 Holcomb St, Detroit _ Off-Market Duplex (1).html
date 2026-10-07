@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3461 Holcomb St, Detroit | Off-Market Duplex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F3; --surface:#FFFFFF; --ink:#14213D; --muted:#5B6474; --line:#D9DEE3;
+  --brick:#A63D2F; --brick-soft:#F4E2DE; --green:#2F6B4F; --green-soft:#DDEDE4; --steel:#8A94A6;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1626; --surface:#17203A; --ink:#E8ECF3; --muted:#A3ADBF; --line:#2A3553;
+    --brick:#E0705F; --brick-soft:#3A2228; --green:#5BBF8E; --green-soft:#183326; --steel:#6E7A92;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1626; --surface:#17203A; --ink:#E8ECF3; --muted:#A3ADBF; --line:#2A3553;
+  --brick:#E0705F; --brick-soft:#3A2228; --green:#5BBF8E; --green-soft:#183326; --steel:#6E7A92;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brick);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* Top strip */
+.strip{background:var(--ink);color:var(--bg);font-size:14px}
+.strip .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.strip a{color:var(--bg);font-weight:600;text-decoration:none}
+
+/* Hero */
+.hero{padding:44px 0 28px}
+.status{display:inline-block;background:var(--brick-soft);color:var(--brick);font-weight:700;font-size:14px;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+h1{font-family:var(--display);font-stretch:75%;font-weight:900;font-size:clamp(44px,9vw,96px);line-height:.92;letter-spacing:-.01em;margin:0}
+.city{font-family:var(--display);font-stretch:100%;font-weight:600;font-size:clamp(20px,3vw,28px);color:var(--muted);margin:10px 0 0}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+.facts li{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 14px;font-size:15px}
+.facts strong{font-weight:700}
+
+/* Spread: the signature element */
+.spread{margin-top:34px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.spread-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.price-label{font-size:15px;color:var(--muted);margin:0}
+.price{font-family:var(--display);font-stretch:75%;font-weight:900;font-size:clamp(48px,8vw,80px);line-height:1;color:var(--brick);margin:2px 0 0}
+.arv-block{text-align:right}
+.arv{font-family:var(--display);font-stretch:75%;font-weight:800;font-size:clamp(32px,5vw,48px);line-height:1;margin:2px 0 0}
+.bar{display:flex;height:54px;margin-top:22px;border-radius:8px;overflow:hidden;background:var(--line)}
+.seg{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;transition:flex-basis .35s ease;min-width:0}
+.seg.buy{background:var(--brick);color:#fff}
+.seg.rehab{background:var(--steel);color:#fff}
+.seg.costs{background:var(--line);color:var(--ink)}
+.seg.profit{background:var(--green);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px;font-size:14px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0;background:var(--c)}
+.spread-note{font-size:14px;color:var(--muted);margin:14px 0 0}
+
+/* Sections */
+section{padding:44px 0}
+h2{font-family:var(--display);font-stretch:85%;font-weight:800;font-size:clamp(30px,4.5vw,42px);line-height:1.05;margin:0 0 8px}
+.lede{color:var(--muted);max-width:62ch;margin:0 0 24px}
+
+/* Photos */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.gallery figure{margin:0;border-radius:10px;overflow:hidden;background:var(--surface);border:1px solid var(--line);aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.photo-empty{border:2px dashed var(--line);border-radius:12px;padding:36px 20px;text-align:center;color:var(--muted);background:var(--surface)}
+
+/* Comps */
+.tabs{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:4px;gap:4px;margin-bottom:20px;flex-wrap:wrap}
+.tab{border:0;background:transparent;color:var(--muted);font:600 15px var(--body);padding:10px 16px;border-radius:7px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.comp-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat p{margin:0;font-size:14px;color:var(--muted)}
+.stat b{display:block;font-family:var(--display);font-stretch:80%;font-weight:800;font-size:28px;line-height:1.1;color:var(--ink)}
+.stat.hl b{color:var(--green)}
+.comps{display:grid;gap:10px}
+.comp{display:grid;grid-template-columns:1.6fr 1fr 1.2fr .8fr auto;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.comp .addr{font-weight:700}
+.comp .note{font-size:14px;color:var(--muted)}
+.comp .sold{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:24px;line-height:1}
+.comp .date{font-size:14px;color:var(--muted)}
+.comp .spec{font-size:15px}
+.comp .ppsf{font-weight:700}
+.comp a.view{font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:7px;padding:7px 12px;white-space:nowrap}
+.comp a.view:hover{border-color:var(--ink)}
+.upside{margin-top:16px;background:var(--green-soft);border-radius:10px;padding:14px 18px;font-size:15px}
+@media (max-width:760px){
+  .comp{grid-template-columns:1fr auto;grid-template-areas:"addr sold" "spec ppsf" "view view"}
+  .comp > :nth-child(1){grid-area:addr}
+  .comp > :nth-child(2){grid-area:sold;text-align:right}
+  .comp > :nth-child(3){grid-area:spec}
+  .comp > :nth-child(4){grid-area:ppsf;text-align:right}
+  .comp > :nth-child(5){grid-area:view;justify-self:start}
+}
+
+/* Calculator */
+.calc{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+@media (max-width:760px){.calc{grid-template-columns:1fr}}
+.field{margin-bottom:22px}
+.field label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:8px}
+.field label output{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:22px}
+.field small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+input[type=range]{width:100%;accent-color:var(--brick);height:28px}
+.results{display:grid;gap:10px;align-content:start}
+.row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row span:first-child{color:var(--muted)}
+.row b{font-weight:700}
+.big{background:var(--green-soft);border-radius:10px;padding:16px 18px;margin-top:6px}
+.big p{margin:0;font-size:14px;color:var(--muted)}
+.big b{display:block;font-family:var(--display);font-stretch:75%;font-weight:900;font-size:clamp(40px,6vw,56px);line-height:1;color:var(--green)}
+.big.neg{background:var(--brick-soft)} .big.neg b{color:var(--brick)}
+
+/* Terms + contact */
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.term p{margin:0;color:var(--muted);font-size:14px}
+.term b{display:block;font-size:18px;margin-top:2px}
+.offer{background:var(--ink);color:var(--bg);border-radius:16px;padding:36px 28px;text-align:center}
+.offer h2{color:var(--bg)}
+.offer p{color:var(--bg);opacity:.85;margin:0 auto 22px;max-width:52ch}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font:700 17px var(--body);text-decoration:none;padding:14px 26px;border-radius:10px;border:2px solid var(--bg)}
+.btn.primary{background:var(--brick);border-color:var(--brick);color:#fff}
+.btn.ghost{color:var(--bg)}
+.contact-name{margin-top:18px;font-size:15px;opacity:.8}
+footer{padding:28px 0 100px;color:var(--muted);font-size:13px}
+footer p{max-width:80ch}
+
+/* Mobile sticky CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line);display:none;gap:10px;align-items:center;justify-content:space-between;z-index:10}
+.sticky .p{font-family:var(--display);font-stretch:75%;font-weight:900;font-size:28px;color:var(--brick);line-height:1}
+.sticky a{background:var(--brick);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:9px}
+@media (max-width:760px){.sticky{display:flex}}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,14,25,.92);display:none;align-items:center;justify-content:center;z-index:20;padding:20px}
+.lb.open{display:flex}
+.lb img{max-height:90vh;border-radius:8px}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;background:#fff;border:0;border-radius:999px;width:44px;height:44px;font-size:22px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Off-market cash deal, contract assignment</span>
+    <a href="#offer">Make an offer</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="status">Under contract, available now</span>
+    <h1>3461 Holcomb St</h1>
+    <p class="city">Detroit, MI 48214, East Village</p>
+    <ul class="facts">
+      <li><strong>Duplex</strong>, 2 units</li>
+      <li><strong>~2,016</strong> sq ft</li>
+      <li><strong>2</strong> baths</li>
+      <li>Built <strong>1925</strong></li>
+      <li>Needs <strong>full rehab</strong></li>
+    </ul>
+
+    <div class="spread" aria-label="Deal spread">
+      <div class="spread-head">
+        <div>
+          <p class="price-label">Asking price</p>
+          <p class="price">$38,000</p>
+        </div>
+        <div class="arv-block">
+          <p class="price-label">After-repair value (duplex comps)</p>
+          <p class="arv" id="heroArv">$325,000</p>
+        </div>
+      </div>
+      <div class="bar" id="bar">
+        <div class="seg buy" id="segBuy">Buy</div>
+        <div class="seg rehab" id="segRehab">Rehab</div>
+        <div class="seg costs" id="segCosts">Costs</div>
+        <div class="seg profit" id="segProfit">Profit</div>
+      </div>
+      <div class="legend">
+        <span style="--c:var(--brick)">Purchase</span>
+        <span style="--c:var(--steel)">Rehab</span>
+        <span style="--c:var(--line)">Closing &amp; holding</span>
+        <span style="--c:var(--green)">Your profit</span>
+      </div>
+      <p class="spread-note">Based on a $325K ARV, $90K rehab, and 10% closing and holding costs. Run your own numbers in the calculator below.</p>
+    </div>
+  </div>
+</header>
+
+<section id="photos">
+  <div class="wrap">
+    <h2>Photos</h2>
+    <p class="lede">Interior and exterior photos of the current condition are in a shared Google Drive folder.</p>
+    <div class="photo-empty"><a class="btn primary" href="https://drive.google.com/drive/folders/1FBFuCRqxJCOfg_jJSYvhFEPXvbOZQH6V" target="_blank" rel="noopener">View all photos</a></div>
+  </div>
+</section>
+
+<section id="comps">
+  <div class="wrap">
+    <h2>Recent sales nearby</h2>
+    <p class="lede">Renovated homes that sold in 48214 within the last year, from Realcomp MLS records. Price per square foot is applied to this property's ~2,016 sq ft to estimate value.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-set="mf">Duplex comps (3)</button>
+      <button class="tab" role="tab" aria-selected="false" data-set="sf">Single-family comps (4)</button>
+    </div>
+    <div class="comp-summary" id="summary"></div>
+    <div class="comps" id="compList"></div>
+    <div class="upside" id="upside"></div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <h2>Run your numbers</h2>
+    <p class="lede">Drag the sliders to match your own rehab budget and exit price. Your numbers stay on your screen only and reset when you reload.</p>
+    <div class="calc">
+      <div>
+        <div class="field">
+          <label for="arvIn">After-repair value <output id="arvOut"></output></label>
+          <input type="range" id="arvIn" min="200000" max="420000" step="5000" value="325000">
+          <small>ARV is $325K based on duplex comps; the average duplex comp sold for $348K.</small>
+        </div>
+        <div class="field">
+          <label for="rehabIn">Rehab budget <output id="rehabOut"></output></label>
+          <input type="range" id="rehabIn" min="40000" max="180000" step="5000" value="90000">
+          <small id="rehabPsf"></small>
+        </div>
+        <div class="field">
+          <label for="costIn">Closing &amp; holding costs <output id="costOut"></output></label>
+          <input type="range" id="costIn" min="5" max="15" step="1" value="10">
+          <small>Percent of ARV for closing, financing, taxes, insurance and selling costs.</small>
+        </div>
+      </div>
+      <div class="results">
+        <div class="row"><span>Purchase price</span><b>$38,000</b></div>
+        <div class="row"><span>Rehab</span><b id="rRehab"></b></div>
+        <div class="row"><span>Closing &amp; holding</span><b id="rCost"></b></div>
+        <div class="row"><span>All-in cost</span><b id="rAllIn"></b></div>
+        <div class="row"><span>Max offer at 70% rule</span><b id="rMao"></b></div>
+        <div class="big" id="bigBox"><p>Estimated profit</p><b id="rProfit"></b><p id="rRoi"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="wrap">
+    <h2>Deal terms</h2>
+    <p class="lede">Simple and fast. Bring your best offer.</p>
+    <div class="terms">
+      <div class="term"><p>Asking price</p><b>$38,000</b></div>
+      <div class="term"><p>Earnest money</p><b>$5,000, non-refundable</b></div>
+      <div class="term"><p>Closing</p><b>As soon as possible</b></div>
+      <div class="term"><p>Condition</p><b>Sold as-is, full rehab</b></div>
+      <div class="term"><p>Payment</p><b>Cash or hard money</b></div>
+      <div class="term"><p>Structure</p><b>Assignment of contract</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="offer">
+  <div class="wrap">
+    <div class="offer">
+      <h2>Make an offer</h2>
+      <p>Text your offer and proof of funds. Offers are taken by text only. First solid offer with $5,000 non-refundable earnest money gets the deal.</p>
+      <div class="btns">
+        <a class="btn primary" href="sms:+16122078736?&amp;body=Offer%20on%203461%20Holcomb%20St%3A%20%24">Text an offer to (612) 207-8736</a>
+      </div>
+      <p class="contact-name">Hamza Kadar, Kadar Holdings<br>owner@kadarholdings.com</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Property details are from public records and comparable sales are from Realcomp MLS data as published on public listing sites. All figures, including ARV and rehab estimates, are estimates and not guaranteed. Buyers should verify all information and do their own due diligence before making an offer. Seller is assigning an equitable interest in a purchase contract.</p>
+  </div>
+</footer>
+
+<div class="sticky"><span class="p">$38,000</span><a href="sms:+16122078736?&amp;body=Offer%20on%203461%20Holcomb%20St%3A%20%24">Text an offer</a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button id="lbClose" aria-label="Close photo">&times;</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script>
+const SQFT = 2016, PRICE = 38000;
+
+const COMPS = {
+  mf: [
+    {addr:"3450 Townsend St", note:"Full gut rehab, new roof, windows and systems", price:335000, date:"Aug 2026", bd:7, ba:"3.5", sqft:2350, url:"https://www.zillow.com/homedetails/3450-Townsend-St-Detroit-MI-48214/88476715_zpid/"},
+    {addr:"1535 Garland St", note:"Renovated 2025, new roof, furnace and AC", price:349900, date:"May 2026", bd:6, ba:"2", sqft:2284, url:"https://www.zillow.com/homedetails/1535-Garland-St-Detroit-MI-48214/88351511_zpid/"},
+    {addr:"1409 Baldwin St", note:"Taken to studs, all systems updated", price:358600, date:"Aug 2026", bd:4, ba:"4", sqft:2600, url:"https://www.zillow.com/homedetails/1409-Baldwin-St-Detroit-MI-48214/88703165_zpid/"}
+  ],
+  sf: [
+    {addr:"3466 Fischer St", note:"Fully renovated, same block area", price:462500, date:"Jul 2026", bd:4, ba:"2.5", sqft:2167, url:"https://www.zillow.com/homedetails/3466-Fischer-St-Detroit-MI-48214/88621627_zpid/"},
+    {addr:"2433 Fischer St", note:"Renovated, 41 days on market", price:465000, date:"Feb 2026", bd:4, ba:"2.5", sqft:2311, url:"https://www.zillow.com/homedetails/2433-Fischer-St-Detroit-MI-48214/88274639_zpid/"},
+    {addr:"2517 Fischer St", note:"Renovated East Village home", price:390000, date:"Jan 2026", bd:4, ba:"2.5", sqft:1957, url:"https://www.zillow.com/homedetails/2517-Fischer-St-Detroit-MI-48214/88068146_zpid/"},
+    {addr:"2554 Parker St", note:"Most recent sale", price:300000, date:"Sep 2026", bd:4, ba:"2", sqft:1757, url:"https://www.zillow.com/homedetails/2554-Parker-St-Detroit-MI-48214/88638581_zpid/"}
+  ]
+};
+
+/* Add photo files here as data: URIs, e.g. {src:"data:image/jpeg;base64,...", alt:"Front of house"} */
+const PHOTOS = [];
+
+const $ = id => document.getElementById(id);
+const usd = n => (n<0?"-$":"$") + Math.abs(Math.round(n)).toLocaleString("en-US");
+const k = n => "$" + Math.round(n/1000) + "K";
+
+function stats(set){
+  const list = COMPS[set];
+  const avgPrice = list.reduce((s,c)=>s+c.price,0)/list.length;
+  const avgPsf = list.reduce((s,c)=>s+c.price/c.sqft,0)/list.length;
+  return {avgPrice, avgPsf, implied: avgPsf*SQFT};
+}
+
+function renderComps(set){
+  const s = stats(set);
+  $("summary").innerHTML = `
+    <div class="stat"><p>Average sale price</p><b>${usd(s.avgPrice)}</b></div>
+    <div class="stat"><p>Average price per sq ft</p><b>${usd(s.avgPsf)}</b></div>
+    <div class="stat hl"><p>Implied value for 3461 Holcomb</p><b>${usd(s.implied)}</b></div>`;
+  $("compList").innerHTML = COMPS[set].map(c=>`
+    <div class="comp">
+      <div><div class="addr">${c.addr}</div><div class="note">${c.note}</div></div>
+      <div><div class="sold">${usd(c.price)}</div><div class="date">Sold ${c.date}</div></div>
+      <div class="spec">${c.bd} bd, ${c.ba} ba, ${c.sqft.toLocaleString()} sq ft</div>
+      <div class="ppsf">${usd(c.price/c.sqft)}/sf</div>
+      <a class="view" href="${c.url}" target="_blank" rel="noopener">View listing</a>
+    </div>`).join("");
+  const mf = stats("mf"), sf = stats("sf");
+  $("upside").innerHTML = set==="mf"
+    ? `Single-family conversions on nearby Fischer St are selling at about <b>${usd(sf.avgPsf)}/sf</b>, which would put this property near <b>${k(sf.implied)}</b> if converted.`
+    : `Kept as a duplex, the multifamily comps point to about <b>${k(mf.implied)}</b>. Converting to single-family is where the extra upside is.`;
+}
+
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected", x===t));
+  renderComps(t.dataset.set);
+}));
+
+function calc(){
+  const arv = +$("arvIn").value, rehab = +$("rehabIn").value, pct = +$("costIn").value;
+  const costs = arv*pct/100, allIn = PRICE+rehab+costs, profit = arv-allIn;
+  const mao = arv*0.7 - rehab;
+  $("arvOut").textContent = usd(arv);
+  $("rehabOut").textContent = usd(rehab);
+  $("costOut").textContent = pct + "%";
+  $("rehabPsf").textContent = `About ${usd(rehab/SQFT)} per sq ft across ~2,016 sq ft.`;
+  $("rRehab").textContent = usd(rehab);
+  $("rCost").textContent = usd(costs);
+  $("rAllIn").textContent = usd(allIn);
+  $("rMao").textContent = usd(mao) + (mao>PRICE ? " (above asking)" : "");
+  $("rProfit").textContent = usd(profit);
+  $("rRoi").textContent = `${Math.round(profit/allIn*100)}% return on all-in cost`;
+  $("bigBox").classList.toggle("neg", profit<0);
+}
+
+/* Fixed headline spread: the same for every visitor, never changed by the calculator */
+(function(){
+  const arv = 325000, rehab = 90000, costs = arv*0.10, profit = arv - PRICE - rehab - costs;
+  const seg = (id,v,label)=>{const el=$(id); const p=Math.max(v,0)/arv*100; el.style.flexBasis=p+"%"; el.textContent=p>9?label:"";};
+  seg("segBuy",PRICE,k(PRICE));
+  seg("segRehab",rehab,k(rehab));
+  seg("segCosts",costs,k(costs));
+  seg("segProfit",profit,k(profit)+" profit");
+})();
+["arvIn","rehabIn","costIn"].forEach(id=>$(id).addEventListener("input",calc));
+
+function renderPhotos(){
+  if(!PHOTOS.length){
+    $("gallery").outerHTML = `<div class="photo-empty">Photos available on request. Call or text for interior and exterior pictures.</div>`;
+    return;
+  }
+  $("gallery").innerHTML = PHOTOS.map((p,i)=>`<figure><img src="${p.src}" alt="${p.alt||"Property photo "+(i+1)}" data-i="${i}" tabindex="0"></figure>`).join("");
+  $("gallery").addEventListener("click",e=>{if(e.target.tagName==="IMG")openLb(e.target);});
+  $("gallery").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.tagName==="IMG")openLb(e.target);});
+}
+function openLb(img){$("lbImg").src=img.src;$("lbImg").alt=img.alt;$("lb").classList.add("open");$("lbClose").focus();}
+$("lbClose").addEventListener("click",()=>$("lb").classList.remove("open"));
+$("lb").addEventListener("click",e=>{if(e.target===$("lb"))$("lb").classList.remove("open");});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$("lb").classList.remove("open");});
+
+renderComps("mf");
+calc();
+</script>
+</body>
+</html>
